@@ -1,9 +1,3 @@
-# Next.js starter template
+## Dualing
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- ESLint
-- Prettier
-- Jest
-- Playwright
+株式会社ウィズアス主要サービス
