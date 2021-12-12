@@ -1,29 +1,31 @@
-import type { CustomNextPage } from "next";
+import type { NextPage } from "next";
 import Head from "next/head";
-import { Button } from "src/component/Button/Button";
-import { FluidLayout } from "src/layout/FluidLayout";
+import { FAQ } from "src/component/LP/FAQ";
+import { FirstView } from "src/component/LP/FirstView";
+import { Flow } from "src/component/LP/Flow";
+import { Footer } from "src/component/LP/Footer";
+import { Header } from "src/component/LP/Header";
+import { Merit } from "src/component/LP/Merit";
+import { Whatis } from "src/component/LP/Whatis";
 
-const Home: CustomNextPage = () => {
-  const handleClick = () => {
-    alert("Hello World!");
-  };
-
+const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
-        <title>Index Page</title>
+        <title>Dualing</title>
       </Head>
 
-      <div className="space-y-4">
-        <h2>Index</h2>
-        <Button variant="solid-blue" className="p-2 rounded" onClick={handleClick}>
-          show alert!
-        </Button>
-      </div>
-    </div>
+      <main className="font-sans">
+        <Header />
+        <FirstView />
+        <Whatis />
+        <Merit />
+        <Flow />
+        <FAQ />
+        <Footer />
+      </main>
+    </>
   );
 };
-
-Home.getLayout = FluidLayout;
 
 export default Home;
