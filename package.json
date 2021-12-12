@@ -24,14 +24,24 @@
     "printWidth": 120
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.1",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/line-clamp": "^0.2.2",
     "@tailwindcss/typography": "^0.4.1",
+    "@u-wave/react-vimeo": "^0.9.4",
+    "classcat": "^5.0.3",
     "clsx": "^1.1.1",
+    "emailjs-com": "^3.2.0",
+    "firebase": "^9.2.0",
     "next": "12.0.7",
     "react": "17.0.2",
+    "react-datepicker": "^4.1.0",
     "react-dom": "17.0.2",
-    "react-error-boundary": "^3.1.4"
+    "react-error-boundary": "^3.1.4",
+    "react-hook-form": "^7.11.1",
+    "react-hot-toast": "^2.0.0",
+    "react-select": "^4.3.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.17.1",
@@ -40,6 +50,10 @@
     "@types/jest": "^27.0.3",
     "@types/node": "16.11.11",
     "@types/react": "17.0.37",
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
+    "@types/react-datepicker": "^3.1.8",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-select": "^4.0.18",
     "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
@@ -55,6 +69,7 @@
     "lint-staged": "^12.1.2",
     "postcss": "^8.4.4",
     "prettier": "^2.5.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.2.19",
     "typescript": "4.5.2"
