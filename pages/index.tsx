@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { FAQ } from "src/component/LP/FAQ";
 import { FirstView } from "src/component/LP/FirstView";
 import { Flow } from "src/component/LP/Flow";
@@ -11,10 +10,6 @@ import { Whatis } from "src/component/LP/Whatis";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Dualing</title>
-      </Head>
-
       <main className="font-sans">
         <Header />
         <FirstView />
