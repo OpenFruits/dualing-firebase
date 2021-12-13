@@ -10,13 +10,13 @@ const MyApp = (props: AppProps) => {
     <>
       <NextHeadSeo
         title="Dualing"
-        description="体育会の就活のDualing（デュアリング）"
+        description="体育会就活のDualing（デュアリング）"
         og={{
           image: "ogp.jpg",
         }}
-        // twitter={{
-        //   card: "summary",
-        // }}
+        twitter={{
+          card: "summary",
+        }}
         customLinkTags={[
           {
             rel: "icon",
