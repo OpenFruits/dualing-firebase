@@ -47,7 +47,7 @@ const StudentId: NextPage = () => {
           <Inform />
           <Profile />
           {condition === "reserved" && <Booking />}
-          {condition === "shooting" && <Booking />}
+          {condition === "shooting" && <GrayBox />}
           {condition === "waiting" && <GrayBox />}
           {condition === "normal" && (
             <div>
