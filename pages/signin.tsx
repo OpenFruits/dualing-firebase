@@ -79,7 +79,7 @@ const SignIn: VFC = () => {
           <div className="text-center">
             <Button
               className="m-auto my-4 w-2/3 shadow-md sm:w-full"
-              disabled={isLoading}
+              isDisabled={isLoading}
               onClick={handleSubmit(signIn)}
             >
               {isLoading ? "ログイン中" : "ログイン"}

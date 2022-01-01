@@ -114,7 +114,7 @@ const Admin: NextPage = () => {
               error={errors.password?.message}
             />
             <div className="text-center">
-              <Button className="m-auto w-2/3 shadow-md" onClick={handleSubmit(adminSignin)} disabled={isLoading}>
+              <Button className="m-auto w-2/3 shadow-md" onClick={handleSubmit(adminSignin)} isDisabled={isLoading}>
                 {isLoading ? "ログイン中" : "ログイン"}
               </Button>
               <div className="py-1" />

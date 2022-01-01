@@ -74,7 +74,7 @@ const SignIn: VFC = () => {
             error={errors.password?.message}
           />
           <div className="text-center">
-            <Button className="m-auto w-2/3 shadow-md" disabled={isLoading} onClick={handleSubmit(signIn)}>
+            <Button className="m-auto w-2/3 shadow-md" isDisabled={isLoading} onClick={handleSubmit(signIn)}>
               {isLoading ? "ログイン中" : "ログイン"}
             </Button>
             <div className="py-1" />
