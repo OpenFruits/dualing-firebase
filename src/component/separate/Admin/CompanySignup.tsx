@@ -1,5 +1,6 @@
 import { collection, doc, setDoc } from "@firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Timestamp } from "firebase/firestore";
 import { useRouter } from "next/router";
 import type { VFC } from "react";
 import { useState } from "react";
@@ -8,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Button } from "src/component/shared/Button";
 import { Input } from "src/component/shared/Input";
-import { auth, db, FirebaseTimestamp } from "src/firebase";
+import { auth, db } from "src/firebase";
 
 type Inputs = {
   name: string;
@@ -41,7 +42,7 @@ export const CompanySignup: VFC<{ onClose: () => void }> = (props) => {
           const ref = collection(db, "companies");
           await setDoc(doc(ref, company.uid), {
             // eslint-disable-next-line @typescript-eslint/naming-convention
-            created_at: FirebaseTimestamp,
+            created_at: Timestamp.now(),
             companyId: company.uid,
             name: name,
             email: email,
@@ -107,7 +108,7 @@ export const CompanySignup: VFC<{ onClose: () => void }> = (props) => {
         })}
         error={formState.errors.confirmPassword?.message}
       />
-      <Button className="my-4 w-full shadow-md" disabled={isLoading} onClick={handleSubmit(createCompany)}>
+      <Button className="my-4 w-full shadow-md" isDisabled={isLoading} onClick={handleSubmit(createCompany)}>
         {isLoading ? "登録中" : "企業アカウント登録"}
       </Button>
     </form>

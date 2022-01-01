@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Dialog, Transition } from "@headlessui/react";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
-import { collection, doc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore";
+import { collection, doc, getDocs, query, setDoc, Timestamp, updateDoc, where } from "firebase/firestore";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import type { VFC } from "react";
@@ -9,7 +9,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Button } from "src/component/shared/Button";
 import type { Company } from "src/constants/types";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 import { sendMail } from "src/libs/sendMail";
 
@@ -63,7 +63,7 @@ export const ScoutedCompany: VFC<Props> = (props) => {
       await updateDoc(relationsRef, { condition: "matching" });
       const companiesRef = collection(db, "companies", props.company.id, "notices");
       await setDoc(doc(companiesRef), {
-        created_at: FirebaseTimestamp,
+        created_at: Timestamp.now(),
         title: "学生とマッチングしました",
         body: noticeBody,
         isRead: false,

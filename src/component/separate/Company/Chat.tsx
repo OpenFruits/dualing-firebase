@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import cc from "classcat";
-import { collection, doc, getDoc, getDocs, orderBy, query, setDoc, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, orderBy, query, setDoc, Timestamp, where } from "firebase/firestore";
 import type { VFC } from "react";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 import { sendMail } from "src/libs/sendMail";
 import { FromTimeStampToDate } from "src/libs/util";
@@ -94,11 +94,11 @@ export const Chat: VFC<Props> = (props) => {
     await setDoc(doc(messagesRef), {
       role: "company",
       message: comment,
-      timestamp: FirebaseTimestamp,
+      timestamp: Timestamp.now(),
     }).then(() => setComment(""));
     const noticesRef = collection(db, "users", props.studentId, "notices");
     await setDoc(doc(noticesRef), {
-      created_at: FirebaseTimestamp,
+      created_at: Timestamp.now(),
       title: "企業から新着メッセージがあります",
       body: noticeBody,
       isRead: false,

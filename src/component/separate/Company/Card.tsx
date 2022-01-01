@@ -1,12 +1,12 @@
 import { BookmarkIcon } from "@heroicons/react/outline";
-import { collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, Timestamp, where } from "firebase/firestore";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import type { VFC } from "react";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import type { Student } from "src/constants/types";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 
 type Props = {
@@ -66,7 +66,7 @@ export const Card: VFC<Props> = (props) => {
         : await setDoc(bookmarkRef, {
             studentId: props.student.uid,
             // eslint-disable-next-line @typescript-eslint/naming-convention
-            created_at: FirebaseTimestamp,
+            created_at: Timestamp.now(),
           });
     }
     setIsBookmark(!isBookmark);

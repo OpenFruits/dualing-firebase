@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Dialog, Transition } from "@headlessui/react";
 import cc from "classcat";
-import { collection, deleteDoc, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDoc, setDoc, Timestamp, updateDoc } from "firebase/firestore";
 import type { VFC } from "react";
 import { Fragment, useEffect, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
@@ -13,7 +13,7 @@ import { Button } from "src/component/shared/Button";
 import { getJapaneseDate } from "src/component/shared/DatePicker";
 import { Input } from "src/component/shared/Input";
 import type { Schedule, VimeoUser } from "src/constants/types";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { sendMail } from "src/libs/sendMail";
 import { resetDate } from "src/libs/util";
 
@@ -76,7 +76,7 @@ export const ScheduleItem: VFC<Props> = (props) => {
       // 3. 学生に通知+メール送信
       const newNoticeRef = collection(db, "users", studentId, "notices");
       await setDoc(doc(newNoticeRef), {
-        created_at: FirebaseTimestamp,
+        created_at: Timestamp.now(),
         title: "ZOOMのURLをお送りします",
         body: `
              <h2>ZOOMのURL</h2>

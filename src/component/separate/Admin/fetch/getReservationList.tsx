@@ -1,5 +1,5 @@
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { collection, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
+import { db } from "src/firebase";
 
 export const getReservationList = async () => {
   const reservationsRef = collection(db, "reservations");
@@ -13,7 +13,7 @@ export const getReservationList = async () => {
       secondChoice: s.get("secondChoice"),
       thirdChoice: s.get("thirdChoice"),
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      created_at: FirebaseTimestamp,
+      created_at: Timestamp.now(),
     };
   });
   return reservations;

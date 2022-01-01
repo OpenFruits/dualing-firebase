@@ -3,13 +3,14 @@ import { collection, doc, getDoc, setDoc, updateDoc } from "@firebase/firestore"
 import { Dialog, Transition } from "@headlessui/react";
 import { FilmIcon, VideoCameraIcon } from "@heroicons/react/outline";
 import Vimeo from "@u-wave/react-vimeo";
+import { Timestamp } from "firebase/firestore";
 import type { VFC } from "react";
 import { Fragment, useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { getVimeoUserList } from "src/component/separate/Admin/fetch/getVimeoUserList";
 import { Button } from "src/component/shared/Button";
 import type { VimeoUser } from "src/constants/types";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { sendMail } from "src/libs/sendMail";
 
 type Props = {
@@ -96,7 +97,7 @@ export const VimeoUserItem: VFC<Props> = (props) => {
       // 2. 通知+メール送信
       const newNoticeRef = collection(db, "users", props.vimeoUser.studentId, "notices");
       await setDoc(doc(newNoticeRef), {
-        created_at: FirebaseTimestamp,
+        created_at: Timestamp.now(),
         title: "動画登録完了のお知らせ",
         body: noticeBody,
         isRead: false,

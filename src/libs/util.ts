@@ -1,5 +1,5 @@
+import { Timestamp } from "@firebase/firestore";
 import type { OptionType } from "src/constants/types";
-import type { FirebaseTimestamp } from "src/firebase";
 
 export const filterValue = (array: OptionType[]) => {
   return array.map((item) => item.value);
@@ -11,7 +11,9 @@ export const arrayForSearch = (array: OptionType[]) => {
     .reduce((obj, [key]) => Object.assign(obj, { [key]: true }), {});
 };
 
-export const FromTimeStampToDate = (date: typeof FirebaseTimestamp) => {
+const timestamp = Timestamp.now();
+
+export const FromTimeStampToDate = (date: typeof timestamp) => {
   const d = new Date(date.seconds * 1000);
   const year = d.getFullYear();
   const month = d.getMonth() + 1;

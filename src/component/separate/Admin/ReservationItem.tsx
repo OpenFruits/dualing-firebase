@@ -12,7 +12,7 @@ import { Button } from "src/component/shared/Button";
 import { DatePicker } from "src/component/shared/DatePicker";
 import { startTimeOptions } from "src/constants/options/startTime";
 import type { Reservation, Schedule } from "src/constants/types";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { sendMail } from "src/libs/sendMail";
 import { resetDate } from "src/libs/util";
 
@@ -110,7 +110,7 @@ export const ReservationItem: VFC<Props> = (props) => {
       // 3. 学生に通知+メール送信
       const newNoticeRef = collection(db, "users", docId, "notices");
       await setDoc(doc(newNoticeRef), {
-        created_at: FirebaseTimestamp,
+        created_at: Timestamp.now(),
         title: "ZOOM面談の日程をお送りします",
         body: noticeBody,
         isRead: false,

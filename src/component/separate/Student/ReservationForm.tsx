@@ -1,5 +1,6 @@
 import { collection, doc, setDoc, updateDoc } from "@firebase/firestore";
 import { Dialog, Transition } from "@headlessui/react";
+import { Timestamp } from "firebase/firestore";
 import type { VFC } from "react";
 import { Fragment } from "react";
 import { useContext, useState } from "react";
@@ -8,7 +9,7 @@ import { OpeningMessage } from "src/component/separate/Student/OpeningMessage";
 import { Button } from "src/component/shared/Button";
 import { DatePicker } from "src/component/shared/DatePicker";
 import { SelectTimeZone } from "src/component/shared/SelectTimeZone";
-import { db, FirebaseTimestamp } from "src/firebase";
+import { db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 
 export type Reservations = {
@@ -48,7 +49,7 @@ export const ReservationForm: VFC = () => {
       secondChoice: `${secondChoice.date} ${secondChoice.timeZone}`,
       thirdChoice: `${thirdChoice.date} ${thirdChoice.timeZone}`,
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      created_at: FirebaseTimestamp,
+      created_at: Timestamp.now(),
     });
   };
 
