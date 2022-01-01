@@ -70,11 +70,6 @@ const AuthProvider = (props: any) => {
     });
   }, []);
 
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(currentUser);
-  }, [currentUser]);
-
   return (
     <AuthContext.Provider
       value={{
