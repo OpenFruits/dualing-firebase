@@ -1,4 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { XIcon } from "@heroicons/react/outline";
 import type { VFC } from "react";
 import { Fragment } from "react";
 
@@ -38,9 +39,12 @@ export const Drawer: VFC<Props> = (props) => {
           leaveTo={isFromLeft ? "-translate-x-full" : "translate-x-full"}
         >
           <Dialog.Title as="h3" className="p-4 text-lg font-bold leading-6 text-gray-900">
-            {title}
+            <div className="flex justify-between items-center">
+              <h3>{title}</h3>
+              <XIcon className="w-8 h-8" onClick={() => setIsOpen(false)} />
+            </div>
           </Dialog.Title>
-          <div className="py-2 px-4">{children}</div>
+          <div className="py-2 px-4 bg-white">{children}</div>
         </Transition.Child>
       </Dialog>
     </Transition>
