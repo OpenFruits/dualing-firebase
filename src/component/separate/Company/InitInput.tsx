@@ -123,7 +123,7 @@ export const InitInput: VFC = () => {
           error={errors.recruitUrl?.message}
         />
         <div className="py-1" />
-        <Button className="w-full shadow-md" disabled={isLoading} onClick={handleSubmit(submit)}>
+        <Button className="w-full shadow-md" isDisabled={isLoading} onClick={handleSubmit(submit)}>
           {isLoading ? "登録処理中" : "入力を完了し、学生閲覧を開始する"}
         </Button>
       </form>
