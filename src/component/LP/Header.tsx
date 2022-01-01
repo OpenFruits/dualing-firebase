@@ -1,20 +1,23 @@
-import { MenuIcon } from "@heroicons/react/solid";
+import "react-modern-drawer/dist/index.css";
+
+import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
 import type { VFC } from "react";
 import { useContext, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Drawer from "react-modern-drawer";
 import { Button } from "src/component/shared/Button";
-import { Drawer } from "src/component/shared/Drawer";
 import { googleFormUrl } from "src/constants/externalLink";
 import { AuthContext } from "src/firebase/Auth";
 
 export const Header: VFC = () => {
   const { currentUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
-  const onOpen = () => setIsOpen(true);
-  const onClose = () => setIsOpen(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
 
   const MENU = [
     { title: "Dualingとは", href: "#whatis", offset: 100 },
@@ -37,7 +40,7 @@ export const Header: VFC = () => {
             className="cursor-pointer"
           />
           {currentUser ? null : (
-            <MenuIcon className="w-12 h-12 text-black cursor-pointer lg:invisible" onClick={onOpen} />
+            <MenuIcon className="w-12 h-12 text-black cursor-pointer lg:invisible" onClick={toggleDrawer} />
           )}
           <nav className="hidden font-sans text-base font-bold lg:flex">
             <ul className="flex items-center pr-3">
@@ -70,15 +73,19 @@ export const Header: VFC = () => {
             </div>
           </nav>
         </div>
-        <Drawer isOpen={isOpen} setIsOpen={setIsOpen} title="メニュー">
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="right" size={384}>
+          <div className="flex justify-between">
+            <h3 className="py-2 px-4 text-2xl font-bold">メニュー</h3>
+            <XIcon className="w-12 h-12 text-black cursor-pointer" onClick={toggleDrawer} />
+          </div>
           {MENU.map((menu) => {
             return (
-              <div key={menu.title} onClick={onClose} className="py-3 px-2 text-xl font-bold">
+              <div key={menu.title} onClick={toggleDrawer} className="py-3 px-4 text-xl font-bold">
                 <AnchorLink href={menu.href} offset={menu.offset}>{`→ ${menu.title}`}</AnchorLink>
               </div>
             );
           })}
-          <div className="flex flex-col my-3 space-y-4">
+          <div className="flex flex-col m-4 space-y-4">
             <Link href="/signin">
               <a className="flex flex-col">
                 <Button variant="solid-red" className="rounded">
