@@ -102,7 +102,6 @@ export const ScoutedCompany: VFC<Props> = (props) => {
         <p className="text-sm">{props.company.name}</p>
         <button
           onClick={onOpen}
-          // eslint-disable-next-line tailwindcss/no-custom-classname
           className="p-2 w-32 text-xs font-bold tracking-wider text-center text-white bg-blue-500 hover:bg-blue-400 rounded cursor-pointer focus:outline-none lg:text-md"
         >
           詳細・マッチング

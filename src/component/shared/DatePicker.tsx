@@ -295,7 +295,6 @@ export const DatePicker: VFC<Props> = (props) => {
                   dispatch({ type: "IS_OPEN", isOpen: false });
                   toggleDisplayDateFocus();
                 }}
-                // eslint-disable-next-line tailwindcss/no-custom-classname
                 className="py-3 pr-10 pl-4 w-full font-medium leading-none text-gray-600 rounded-lg border border-theme-dark outline-none focus:outline-none shadow-sm focus:shadow-outline"
                 placeholder="Select date"
               />

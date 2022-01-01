@@ -11,20 +11,10 @@ module.exports = {
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "func-style": ["error", "expression"],
-    // "arrow-body-style": ["error", "always"],
     "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
     // react
     "react-hooks/exhaustive-deps": "off",
     "react/display-name": "error",
-    // "react/jsx-handler-names": [
-    //   "error",
-    //   {
-    //     eventHandlerPrefix: "handle",
-    //     eventHandlerPropPrefix: "on",
-    //     checkLocalVariables: true,
-    //     checkInlineFunction: true,
-    //   },
-    // ],
     "react/destructuring-assignment": ["error", "never"],
     // import
     "import/newline-after-import": "error",

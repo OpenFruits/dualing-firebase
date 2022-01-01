@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { Dialog, Transition } from "@headlessui/react";
 import { BookmarkIcon } from "@heroicons/react/solid";
 import Vimeo from "@u-wave/react-vimeo";
