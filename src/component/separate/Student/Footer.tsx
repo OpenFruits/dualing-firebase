@@ -93,7 +93,7 @@ export const Footer: VFC = () => {
           <Button
             variant="solid-red"
             className="mt-2 text-sm rounded"
-            disabled={email !== currentUser.email}
+            isDisabled={email !== currentUser.email}
             onClick={deleteAccount}
           >
             退会処理を続行
