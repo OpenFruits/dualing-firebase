@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, Timestamp, updateDoc } from "firebase/firestore";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
@@ -15,7 +15,7 @@ import { industryOptions } from "src/constants/options/industry";
 import { locationOptions } from "src/constants/options/location";
 import { occupationOptions } from "src/constants/options/occupation";
 import type { EditForms as Inputs } from "src/constants/types";
-import { auth, db, FirebaseTimestamp } from "src/firebase";
+import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 import { Header } from "src/layout/application/Header";
 import { Loading } from "src/layout/application/Loading";
@@ -38,7 +38,7 @@ const Edit: NextPage = () => {
   const update: SubmitHandler<Inputs> = async (data) => {
     setIsLoading(true);
     const uid = currentUser.uid;
-    const timestamp = FirebaseTimestamp;
+    const timestamp = Timestamp.now();
     const userUpdateData = {
       updated_at: timestamp,
       firstName: data.firstName,
@@ -354,7 +354,7 @@ const Edit: NextPage = () => {
             </div>
           </div>
           <br />
-          <Button className="mb-4 w-full shadow-md" disabled={isLoading} onClick={handleSubmit(update)}>
+          <Button className="mb-4 w-full shadow-md" isDisabled={isLoading} onClick={handleSubmit(update)}>
             {isLoading ? "更新中" : "プロフィール情報を更新する"}
           </Button>
         </form>

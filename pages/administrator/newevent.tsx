@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
+import { collection, doc, getDocs, query, setDoc, Timestamp, where } from "firebase/firestore";
 import { useRouter } from "next/router";
 import type { VFC } from "react";
 import { useCallback, useContext, useState } from "react";
@@ -7,7 +7,7 @@ import { Button } from "src/component/shared/Button";
 import { InputSection } from "src/component/shared/InputSection";
 import { Layout } from "src/component/shared/Layout";
 import { TextInput } from "src/component/shared/TextInput";
-import { auth, db, FirebaseTimestamp } from "src/firebase";
+import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 import { Header } from "src/layout/application/Header";
 import { Loading } from "src/layout/application/Loading";
@@ -49,12 +49,12 @@ const NewEvent: VFC = () => {
   const submitEvent = async () => {
     if (confirm("全学生に通知を送信します。")) {
       const ref = collection(db, "users");
-      const q = query(ref, where("condition", "!=", "deleted"));
+      const q = query(ref, where("condition", "!=", "unsubscribed"));
       const snapShot = await getDocs(q);
       snapShot.docs.map(async (s) => {
-        const newNoticeRef = collection(db, "users", s.id, "Notice");
+        const newNoticeRef = collection(db, "users", s.id, "notices");
         await setDoc(doc(newNoticeRef), {
-          created_at: FirebaseTimestamp,
+          created_at: Timestamp.now(),
           title: title,
           body: body,
           isRead: false,

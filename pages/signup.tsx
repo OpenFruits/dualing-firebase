@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import type { VFC } from "react";
@@ -18,7 +18,7 @@ import { industryOptions } from "src/constants/options/industry";
 import { locationOptions } from "src/constants/options/location";
 import { occupationOptions } from "src/constants/options/occupation";
 import type { SignUpForms as Inputs } from "src/constants/types";
-import { auth, db, FirebaseTimestamp } from "src/firebase";
+import { auth, db } from "src/firebase";
 import { Header } from "src/layout/application/Header";
 import { arrayForSearch, filterValue } from "src/libs/util";
 
@@ -57,10 +57,10 @@ const SignUp: VFC = () => {
 
         if (user) {
           const userInitialData = {
-            created_at: FirebaseTimestamp,
+            created_at: Timestamp.now(),
             email: data.email,
             uid: user.uid,
-            updated_at: FirebaseTimestamp,
+            updated_at: Timestamp.now(),
             firstName: data.firstName,
             firstKana: data.firstKana,
             lastName: data.lastName,
@@ -417,7 +417,7 @@ const SignUp: VFC = () => {
               ）
             </p>
           </div>
-          <Button className="w-full shadow-md" disabled={isLoading} onClick={handleSubmit(signup)}>
+          <Button className="w-full shadow-md" isDisabled={isLoading} onClick={handleSubmit(signup)}>
             {isLoading ? "作成中" : "アカウント作成"}
           </Button>
         </form>

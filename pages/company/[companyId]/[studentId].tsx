@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { BookmarkIcon } from "@heroicons/react/solid";
 import Vimeo from "@u-wave/react-vimeo";
 import { onAuthStateChanged } from "firebase/auth";
-import { collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, Timestamp, where } from "firebase/firestore";
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 import { Chat } from "src/component/separate/Company/Chat";
 import { Button } from "src/component/shared/Button";
 import type { Student } from "src/constants/types";
-import { auth, db, FirebaseTimestamp } from "src/firebase";
+import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
 import { Header } from "src/layout/application/Header";
 import { Loading } from "src/layout/application/Loading";
@@ -117,7 +117,7 @@ const StudentId: NextPage = () => {
         condition: "scout",
       });
       await setDoc(doc(noticesRef), {
-        created_at: FirebaseTimestamp,
+        created_at: Timestamp.now(),
         title: "企業からスカウトされました",
         body: noticeBody,
         isRead: false,
@@ -145,7 +145,7 @@ const StudentId: NextPage = () => {
         ? deleteDoc(ref)
         : setDoc(ref, {
             studentId: student.uid,
-            created_at: FirebaseTimestamp,
+            created_at: Timestamp.now(),
           });
     }
     setIsBookmark(!isBookmark);
