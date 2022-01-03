@@ -73,9 +73,9 @@ const NewEvent: VFC = () => {
     }
   };
 
-  if (!currentUser?.administratorId) return <NotFound />;
-
   if (auth.currentUser && !currentUser) return <Loading />;
+
+  if (!currentUser?.administratorId) return <NotFound />;
 
   return (
     <>

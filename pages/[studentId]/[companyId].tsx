@@ -76,13 +76,10 @@ const CompanyId: NextPage = () => {
     return <Loading />;
   }
 
-  // ログインユーザーとrouter.queryの学生が異なる
-  if (currentUser?.uid !== router.query.studentId) {
+  // ログインユーザーとrouter.queryの学生が異なる or 学生と企業がマッチしていない
+  if (currentUser?.uid !== router.query.studentId || !isMatch) {
     return <NotFound />;
   }
-
-  // router.queryの学生と企業がマッチしていない
-  if (!isMatch) return <NotFound />;
 
   return (
     <>

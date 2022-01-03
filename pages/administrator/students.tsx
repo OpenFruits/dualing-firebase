@@ -64,11 +64,9 @@ const Students: VFC = () => {
     return "";
   };
 
+  if (students.length === 0 || (auth.currentUser && !currentUser)) return <Loading />;
+
   if (!currentUser?.administratorId) return <NotFound />;
-
-  if (students.length === 0) return <Loading />;
-
-  if (auth.currentUser && !currentUser) return <Loading />;
 
   return (
     <>

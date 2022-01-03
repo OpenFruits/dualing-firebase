@@ -42,11 +42,9 @@ const Chatrooms: VFC = () => {
     getChatList();
   }, []);
 
+  if (chatrooms.length === 0 || (auth.currentUser && !currentUser)) return <Loading />;
+
   if (!currentUser?.administratorId) return <NotFound />;
-
-  if (chatrooms.length === 0) return <Loading />;
-
-  if (auth.currentUser && !currentUser) return <Loading />;
 
   return (
     <>

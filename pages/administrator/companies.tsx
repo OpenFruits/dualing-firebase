@@ -45,11 +45,9 @@ const Companies: VFC = () => {
     getCompanyList();
   }, []);
 
+  if (companies.length === 0 || (auth.currentUser && !currentUser)) return <Loading />;
+
   if (!currentUser?.administratorId) return <NotFound />;
-
-  if (companies.length === 0) return <Loading />;
-
-  if (auth.currentUser && !currentUser) return <Loading />;
 
   return (
     <>
