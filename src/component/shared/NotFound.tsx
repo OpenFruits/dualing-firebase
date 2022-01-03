@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import type { VFC } from "react";
 import { useContext } from "react";
 import { Button } from "src/component/shared/Button";
+import { Footer } from "src/component/shared/Footer";
+import { Header } from "src/component/shared/Header";
 import { auth } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Footer } from "src/layout/application/Footer";
-import { Header } from "src/layout/application/Header";
 
 export const NotFound: VFC = () => {
   const router = useRouter();
