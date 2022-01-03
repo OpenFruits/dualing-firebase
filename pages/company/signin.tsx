@@ -6,11 +6,11 @@ import { useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { Button } from "src/component/shared/Button";
+import { Footer } from "src/component/shared/Footer";
+import { Header } from "src/component/shared/Header";
 import { Input } from "src/component/shared/Input";
 import { googleFormUrl } from "src/constants/externalLink";
 import { auth } from "src/firebase";
-import { Footer } from "src/layout/application/Footer";
-import { Header } from "src/layout/application/Header";
 
 type Inputs = {
   email: string;

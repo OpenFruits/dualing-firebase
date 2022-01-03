@@ -9,13 +9,13 @@ import { TopMenu } from "src/component/separate/Admin/TopMenu";
 import { UserFlow } from "src/component/separate/Admin/UserFlow";
 import { ResetPasswordForm } from "src/component/separate/Student/ResetPasswordForm";
 import { Button } from "src/component/shared/Button";
+import { Footer } from "src/component/shared/Footer";
+import { Header } from "src/component/shared/Header";
 import { Input } from "src/component/shared/Input";
+import { Loading } from "src/component/shared/Loading";
+import { NotFound } from "src/component/shared/NotFound";
 import { auth } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Footer } from "src/layout/application/Footer";
-import { Header } from "src/layout/application/Header";
-import { Loading } from "src/layout/application/Loading";
-import { NotFound } from "src/layout/application/NotFound";
 
 type Inputs = {
   email: string;

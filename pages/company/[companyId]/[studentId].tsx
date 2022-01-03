@@ -10,12 +10,12 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Chat } from "src/component/separate/Company/Chat";
 import { Button } from "src/component/shared/Button";
+import { Header } from "src/component/shared/Header";
+import { Loading } from "src/component/shared/Loading";
+import { NotFound } from "src/component/shared/NotFound";
 import type { Student } from "src/constants/types";
 import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Header } from "src/layout/application/Header";
-import { Loading } from "src/layout/application/Loading";
-import { NotFound } from "src/layout/application/NotFound";
 import { sendMail } from "src/libs/sendMail";
 
 const StudentId: NextPage = () => {

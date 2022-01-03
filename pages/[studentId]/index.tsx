@@ -11,11 +11,11 @@ import { MatchingList } from "src/component/separate/Student/MatchingList";
 import { Profile } from "src/component/separate/Student/Profile";
 import { ReservationForm } from "src/component/separate/Student/ReservationForm";
 import { ScoutList } from "src/component/separate/Student/ScoutList";
+import { Header } from "src/component/shared/Header";
+import { Loading } from "src/component/shared/Loading";
+import { NotFound } from "src/component/shared/NotFound";
 import { auth } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Header } from "src/layout/application/Header";
-import { Loading } from "src/layout/application/Loading";
-import { NotFound } from "src/layout/application/NotFound";
 
 const StudentId: NextPage = () => {
   const router = useRouter();

@@ -11,6 +11,7 @@ import Select from "react-select";
 import { PrivacyPolicy } from "src/component/separate/support/PrivacyPolicy";
 import { Terms } from "src/component/separate/support/Terms";
 import { Button } from "src/component/shared/Button";
+import { Header } from "src/component/shared/Header";
 import { Input } from "src/component/shared/Input";
 import { advantageOptions } from "src/constants/options/advantage";
 import { importantOptions } from "src/constants/options/important";
@@ -19,7 +20,6 @@ import { locationOptions } from "src/constants/options/location";
 import { occupationOptions } from "src/constants/options/occupation";
 import type { SignUpForms as Inputs } from "src/constants/types";
 import { auth, db } from "src/firebase";
-import { Header } from "src/layout/application/Header";
 import { arrayForSearch, filterValue } from "src/libs/util";
 
 const SignUp: VFC = () => {

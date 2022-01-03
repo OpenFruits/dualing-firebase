@@ -10,6 +10,9 @@ import { Card } from "src/component/separate/Company/Card";
 import { Footer } from "src/component/separate/Company/Footer";
 import { Inform } from "src/component/separate/Company/Inform";
 import { InitInput } from "src/component/separate/Company/InitInput";
+import { Header } from "src/component/shared/Header";
+import { Loading } from "src/component/shared/Loading";
+import { NotFound } from "src/component/shared/NotFound";
 import { advantageOptions } from "src/constants/options/advantage";
 import { importantOptions } from "src/constants/options/important";
 import { industryOptions } from "src/constants/options/industry";
@@ -18,9 +21,6 @@ import { occupationOptions } from "src/constants/options/occupation";
 import type { Student } from "src/constants/types";
 import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Header } from "src/layout/application/Header";
-import { Loading } from "src/layout/application/Loading";
-import { NotFound } from "src/layout/application/NotFound";
 
 const CompanyId: NextPage = () => {
   const router = useRouter();

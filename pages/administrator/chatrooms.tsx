@@ -4,12 +4,12 @@ import type { VFC } from "react";
 import { useContext, useEffect, useState } from "react";
 import { Chat } from "src/component/separate/Admin/Chat";
 import { Button } from "src/component/shared/Button";
+import { Header } from "src/component/shared/Header";
 import { Layout } from "src/component/shared/Layout";
+import { Loading } from "src/component/shared/Loading";
+import { NotFound } from "src/component/shared/NotFound";
 import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Header } from "src/layout/application/Header";
-import { Loading } from "src/layout/application/Loading";
-import { NotFound } from "src/layout/application/NotFound";
 
 type Chat = {
   id: string;

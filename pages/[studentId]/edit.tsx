@@ -8,7 +8,10 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import Select from "react-select";
 import { Button } from "src/component/shared/Button";
+import { Header } from "src/component/shared/Header";
 import { Input } from "src/component/shared/Input";
+import { Loading } from "src/component/shared/Loading";
+import { NotFound } from "src/component/shared/NotFound";
 import { advantageOptions } from "src/constants/options/advantage";
 import { importantOptions } from "src/constants/options/important";
 import { industryOptions } from "src/constants/options/industry";
@@ -17,9 +20,6 @@ import { occupationOptions } from "src/constants/options/occupation";
 import type { EditForms as Inputs } from "src/constants/types";
 import { auth, db } from "src/firebase";
 import { AuthContext } from "src/firebase/Auth";
-import { Header } from "src/layout/application/Header";
-import { Loading } from "src/layout/application/Loading";
-import { NotFound } from "src/layout/application/NotFound";
 import { arrayForSearch, filterValue } from "src/libs/util";
 
 const Edit: NextPage = () => {

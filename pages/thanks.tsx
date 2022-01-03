@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { Button } from "src/component/shared/Button";
-import { Footer } from "src/layout/application/Footer";
-import { Header } from "src/layout/application/Header";
+import { Footer } from "src/component/shared/Footer";
+import { Header } from "src/component/shared/Header";
 
 const Thanks: NextPage = () => {
   return (

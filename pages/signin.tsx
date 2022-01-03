@@ -8,9 +8,9 @@ import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { ResetPasswordForm } from "src/component/separate/Student/ResetPasswordForm";
 import { Button } from "src/component/shared/Button";
+import { Header } from "src/component/shared/Header";
 import { Input } from "src/component/shared/Input";
 import { auth } from "src/firebase";
-import { Header } from "src/layout/application/Header";
 
 type Inputs = {
   email: string;
