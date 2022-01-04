@@ -9,7 +9,7 @@ const PrivacyPolicy: VFC = () => {
 
   return (
     <>
-      {<Header href={currentUser ? `/${currentUser?.uid}` : "/"} pageTitle="" />}
+      {<Header href={currentUser ? `/${currentUser?.uid}` : "/"} />}
       <PrivacyPolisyComponent />
     </>
   );

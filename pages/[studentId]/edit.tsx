@@ -111,7 +111,7 @@ const Edit: NextPage = () => {
 
   return (
     <>
-      <Header pageTitle="" href={`/${currentUser?.uid}`} />
+      <Header href={`/${currentUser?.uid}`} />
       <div className="m-auto sm:w-2/3">
         <div className="flex justify-between pt-4 pr-4">
           <h1 className="p-2 text-lg font-bold">プロフィール編集</h1>

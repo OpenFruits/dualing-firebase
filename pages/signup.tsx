@@ -117,7 +117,7 @@ const SignUp: VFC = () => {
 
   return (
     <div className="bg-fixed bg-cover bg-first-view">
-      <Header href="/" pageTitle="学生新規登録ページ" />
+      <Header pageTitle="学生新規登録ページ" />
       <div className="p-2 pb-10 m-auto sm:w-2/3">
         <p className="p-2 font-bold bg-white">
           アカウント情報を入力してください

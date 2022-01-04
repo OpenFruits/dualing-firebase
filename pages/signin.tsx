@@ -44,7 +44,7 @@ const SignIn: VFC = () => {
 
   return (
     <div className="w-screen h-screen bg-cover bg-first-view">
-      <Header href="/" pageTitle="学生ログインページ" />
+      <Header pageTitle="学生ログインページ" />
       <div className="p-4 m-auto my-20 sm:w-2/3">
         <form onSubmit={handleSubmit(signIn)}>
           <Input

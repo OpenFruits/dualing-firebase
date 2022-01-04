@@ -31,7 +31,7 @@ export const NotFound: VFC = () => {
 
   return (
     <div>
-      <Header pageTitle="" href="/" />
+      <Header />
       <div className="grid place-items-center w-screen h-[calc(100vh-128px)] bg-cover bg-first-view">
         <div className="p-8 text-gray-600 bg-white rounded-lg">
           <p className="text-lg">ページが見つかりません。</p>

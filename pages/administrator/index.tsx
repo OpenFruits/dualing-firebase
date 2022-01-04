@@ -81,7 +81,7 @@ const Admin: NextPage = () => {
   if (!auth.currentUser) {
     return (
       <div className="py-14 w-screen h-screen bg-cover bg-first-view">
-        <Header href="/" pageTitle="管理者ログインページ" />
+        <Header pageTitle="管理者ログインページ" />
         <div className="p-4 m-auto my-20 w-96 bg-white">
           <form onSubmit={handleSubmit(adminSignin)}>
             <Input

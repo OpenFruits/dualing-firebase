@@ -83,7 +83,7 @@ const CompanyId: NextPage = () => {
 
   return (
     <>
-      <Header pageTitle="" href={`/${currentUser?.uid}`} />
+      <Header href={`/${currentUser?.uid}`} />
       <Layout>
         {company && (
           <div className="m-auto w-full sm:w-[600px] lg:w-[800px]">
