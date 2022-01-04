@@ -7,7 +7,7 @@ import { Header } from "src/component/shared/Header";
 const Thanks: NextPage = () => {
   return (
     <>
-      <Header pageTitle="" href="/" />
+      <Header />
       <div className="grid place-items-center w-screen h-[calc(100vh-128px)] bg-cover bg-first-view">
         <div className="p-8 text-gray-600 bg-white rounded-lg">
           <p className="text-lg">ご利用ありがとうございました。</p>
