@@ -103,42 +103,22 @@ const Students: VFC = () => {
                 </div>
                 {showID === student.uid && (
                   <div className="p-2 space-y-2 border">
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">メールアドレス</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.email}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">電話番号</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.phoneNumber}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">大学・学部</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{`${student.university} ${student.department}`}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">部活</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.club}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">企業選びの軸</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.important.join(", ")}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">興味のある業界</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.industries.join(", ")}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">興味のある職種</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.occupations.join(", ")}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">希望勤務地</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.locations.join(", ")}</p>
-                    </div>
-                    <div className="flex text-xs border border-gray-300">
-                      <p className="py-1 px-2 w-1/4 bg-gray-100">強み、長所</p>
-                      <p className="py-1 px-2 whitespace-pre-wrap">{student.advantages.join(", ")}</p>
-                    </div>
+                    {[
+                      { label: "メールアドレス", text: `${student.email}` },
+                      { label: "電話番号", text: `${student.phoneNumber}` },
+                      { label: "大学・学部", text: `${`${student.university} ${student.department}`}` },
+                      { label: "部活", text: `${student.club}` },
+                      { label: "企業選びの軸", text: `${student.important.join(", ")}` },
+                      { label: "興味のある業界", text: `${student.industries.join(", ")}` },
+                      { label: "興味のある職種", text: `${student.occupations.join(", ")}` },
+                      { label: "希望勤務地", text: `${student.locations.join(", ")}` },
+                      { label: "強み、長所", text: `${student.advantages.join(", ")}` },
+                    ].map((item) => (
+                      <div key={item.label} className="flex text-xs border border-gray-300">
+                        <p className="py-1 px-2 w-1/4 bg-gray-100">{item.label}</p>
+                        <p className="py-1 px-2 whitespace-pre-wrap">{item.text}</p>
+                      </div>
+                    ))}
                     <div className="text-xs border border-gray-300">
                       <p className="py-1 px-2 bg-gray-100">ひとことアピール</p>
                       <p className="py-1 px-2 whitespace-pre-wrap">{student.comment}</p>
