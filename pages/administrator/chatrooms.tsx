@@ -72,4 +72,5 @@ const Chatrooms: VFC = () => {
     </>
   );
 };
+
 export default Chatrooms;

@@ -127,4 +127,5 @@ const NewEvent: VFC = () => {
     </>
   );
 };
+
 export default NewEvent;

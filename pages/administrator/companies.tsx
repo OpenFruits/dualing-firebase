@@ -132,4 +132,5 @@ const Companies: VFC = () => {
     </>
   );
 };
+
 export default Companies;

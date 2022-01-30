@@ -144,4 +144,5 @@ const Students: VFC = () => {
     </>
   );
 };
+
 export default Students;
