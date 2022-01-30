@@ -119,7 +119,7 @@ export const ReservationForm: VFC = () => {
               leave="ease-in duration-200"
               leaveFrom="opacity-100 scale-100"
             >
-              <div className="inline-block overflow-hidden px-6 my-20 w-full max-w-sm text-left align-middle bg-white rounded-2xl transition-all transform shadow-xl">
+              <div className="inline-block overflow-hidden px-6 my-20 w-full max-w-sm text-left align-middle bg-white rounded-2xl shadow-xl transition-all transform">
                 <Dialog.Title as="h3" className="py-4 text-lg font-bold leading-6 text-gray-900">
                   予約内容の確認
                 </Dialog.Title>

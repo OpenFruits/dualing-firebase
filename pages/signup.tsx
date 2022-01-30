@@ -446,7 +446,7 @@ const SignUp: VFC = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block overflow-hidden px-6 my-20 w-full max-w-3xl text-left align-middle bg-white rounded-2xl transition-all transform shadow-xl">
+              <div className="inline-block overflow-hidden px-6 my-20 w-full max-w-3xl text-left align-middle bg-white rounded-2xl shadow-xl transition-all transform">
                 {selectedSupport === "terms" ? <Terms /> : <PrivacyPolicy />}
               </div>
             </Transition.Child>
