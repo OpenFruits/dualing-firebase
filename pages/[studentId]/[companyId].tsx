@@ -64,22 +64,15 @@ const CompanyId: NextPage = () => {
     getCompanyData();
   }, [companyId, isMatch]);
 
-  // 未ログイン
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) router.push("/signin");
     });
   }, []);
 
-  // ローディング
-  if (!currentUser || isMatch === undefined) {
-    return <Loading />;
-  }
+  if (!currentUser || isMatch === undefined) return <Loading />;
 
-  // ログインユーザーとrouter.queryの学生が異なる or 学生と企業がマッチしていない
-  if (currentUser?.uid !== router.query.studentId || !isMatch) {
-    return <NotFound />;
-  }
+  if (currentUser?.uid !== router.query.studentId || !isMatch) return <NotFound />;
 
   return (
     <>

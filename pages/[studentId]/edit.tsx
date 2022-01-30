@@ -94,20 +94,15 @@ const Edit: NextPage = () => {
     register("important");
   }, [register]);
 
-  // 未ログイン
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) router.push("/signin");
     });
   }, []);
 
-  // ローディング
   if (!currentUser) return <Loading />;
 
-  // 別ユーザーでログイン中
-  if (currentUser?.uid !== router.query.studentId) {
-    return <NotFound />;
-  }
+  if (currentUser?.uid !== router.query.studentId) return <NotFound />;
 
   return (
     <>
