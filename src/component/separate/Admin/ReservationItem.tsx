@@ -132,7 +132,7 @@ export const ReservationItem: VFC<Props> = (props) => {
   return (
     <div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="overflow-y-auto fixed inset-0 z-10" onClose={onClose}>
+        <Dialog as="div" className="overflow-y-auto fixed inset-0 z-50" onClose={onClose}>
           <div className="px-4 min-h-screen text-center">
             <Transition.Child
               as={Fragment}
