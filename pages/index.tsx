@@ -9,17 +9,15 @@ import { Whatis } from "src/component/LP/Whatis";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <main className="font-sans text-gray-800">
-        <Header />
-        <FirstView />
-        <Whatis />
-        <Merit />
-        <Flow />
-        <FAQ />
-        <Footer />
-      </main>
-    </>
+    <main className="font-sans text-gray-800">
+      <Header />
+      <FirstView />
+      <Whatis />
+      <Merit />
+      <Flow />
+      <FAQ />
+      <Footer />
+    </main>
   );
 };
 
