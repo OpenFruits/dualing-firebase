@@ -49,7 +49,7 @@ export const FirstView: VFC = () => {
         </div>
       </div>
       <div className="pt-24 pr-8 pb-8 w-1/2 lg:max-w-lg">
-        <div className="hidden w-11/12 h-full bg-cover bg-persons lg:block"></div>
+        <div className="hidden w-5/6 h-full bg-cover bg-persons lg:block"></div>
       </div>
     </div>
   );
