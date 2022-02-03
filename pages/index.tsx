@@ -10,7 +10,7 @@ import { Whatis } from "src/component/LP/Whatis";
 const Home: NextPage = () => {
   return (
     <>
-      <main className="font-sans">
+      <main className="font-sans text-gray-800">
         <Header />
         <FirstView />
         <Whatis />
