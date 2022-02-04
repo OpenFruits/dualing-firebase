@@ -1,3 +1,5 @@
+import { ExternalLinkIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 import type { VFC } from "react";
 import { useContext } from "react";
 import { AuthContext } from "src/firebase/Auth";
@@ -17,9 +19,16 @@ export const OpeningMessage: VFC = () => {
         企業とマッチングするためには、
         <br />
         あなたの自己PR動画が必要です。
-        <br />
-        ビデオ通話サービス「ZOOM」を使い、
-        <br />
+        <div className="flex">
+          ビデオ通話サービス「
+          <Link href="https://zoom.us/">
+            <a target="_blank" className="flex text-blue-700">
+              <p>{` ZOOM `}</p>
+              <ExternalLinkIcon className="w-5 h-5 translate-y-0.5" />
+            </a>
+          </Link>
+          」を使い、
+        </div>
         自己PRのブラッシュアップと
         <br />
         印象の良い動画を撮影します。
