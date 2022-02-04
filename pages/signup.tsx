@@ -40,7 +40,7 @@ const SignUp: VFC = () => {
 
   const signup: SubmitHandler<Inputs> = (data) => {
     if (!hasAgreement) {
-      alert("利用規約への同意が必要です。");
+      alert("利用規約及びプライバシーポリシーへの同意が必要です。");
       return;
     }
 
