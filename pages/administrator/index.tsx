@@ -170,7 +170,7 @@ const Admin: NextPage = () => {
 
   return (
     <>
-      <Header pageTitle="管理者用ページ" href="/" />
+      <Header href="/administrator" pageTitle="管理者用ページ" />
       <TopMenu />
       <UserFlow />
     </>
