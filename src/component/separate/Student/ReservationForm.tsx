@@ -87,15 +87,13 @@ export const ReservationForm: VFC = () => {
           予約確定
         </Button>
       </div>
-      <div>
-        <p className="my-4 mx-2 font-bold">
-          遅くとも明日(
-          {`${monthNum}月${dayNum}日`}
-          )に日時を確定し、ご登録のメールアドレスにご連絡させていただきます。
-          <br />
-          また、ご希望に沿わない場合もありますのでご了承ください。
-        </p>
-      </div>
+      <p className="mx-2 mt-4 font-bold">
+        遅くとも明日(
+        {`${monthNum}月${dayNum}日`}
+        )に日時を確定し、ご登録のメールアドレスにご連絡させていただきます。
+        <br />
+        また、ご希望に沿わない場合もありますのでご了承ください。
+      </p>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="overflow-y-auto fixed inset-0 z-50" onClose={onClose}>
           <div className="px-4 min-h-screen text-center">
